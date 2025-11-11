@@ -44,7 +44,7 @@ jobs:
       - name: Build
         env:
           # Basename para GitHub Pages bajo /<repo>/; Netlify lo ignora
-          VITE_APP_BASE: /academi-co-plus-50020/
+          VITE_APP_BASE: /academi-co-plus-91388/
         run: npm run build
 
       - name: Upload artifact
