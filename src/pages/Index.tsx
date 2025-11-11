@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, BookOpen, Users, TrendingUp } from "lucide-react";
+import { BookOpen, Users, TrendingUp } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -20,8 +21,8 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background">
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <GraduationCap className="h-10 w-10 text-primary" />
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="AcademiCO Logo" className="h-12 w-auto" />
           <h1 className="text-3xl font-bold text-primary">AcademiCO</h1>
         </div>
         <div className="flex gap-3">
