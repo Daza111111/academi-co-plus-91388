@@ -22,7 +22,7 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="AcademiCO Logo" className="h-12 w-auto" />
+          <img src={logo} alt="AcademiCO Logo" className="h-20 w-auto" />
           <h1 className="text-3xl font-bold text-primary">AcademiCO</h1>
         </div>
         <div className="flex gap-3">
