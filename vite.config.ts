@@ -5,8 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use VITE_APP_BASE for GitHub Pages, fallback to "./" for other deployments
-  base: process.env.VITE_APP_BASE || "./",
+  base: "/",
   build: {
     outDir: "docs",
   },

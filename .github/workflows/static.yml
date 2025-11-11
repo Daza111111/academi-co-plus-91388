@@ -42,10 +42,23 @@ jobs:
         run: npm ci
 
       - name: Build
-        env:
-          # Basename para GitHub Pages bajo /<repo>/; Netlify lo ignora
-          VITE_APP_BASE: /academi-co-plus-91388/
-        run: npm run build
+        run: |
+          # Create a temporary vite config for GitHub Pages with base path
+          echo 'import { defineConfig } from "vite";
+          import react from "@vitejs/plugin-react-swc";
+          import path from "path";
+          import { componentTagger } from "lovable-tagger";
+          
+          export default defineConfig(({ mode }) => ({
+            base: "/academi-co-plus-91388/",
+            build: { outDir: "docs" },
+            server: { host: "::", port: 8080 },
+            plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+            resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
+          }));' > vite.config.gh.ts
+          
+          # Build with GitHub Pages config
+          npx vite build --config vite.config.gh.ts
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
