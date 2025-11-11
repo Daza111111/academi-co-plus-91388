@@ -1,73 +1,34 @@
-# Welcome to your Lovable project
+# AcademiCO
 
-## Project info
+Sistema de Gestión Académica para docentes y estudiantes.
 
-**URL**: https://lovable.dev/projects/e43b9dc8-19a3-450b-ab21-ae002bbd543c
+## Tecnologías
 
-## How can I edit this code?
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/e43b9dc8-19a3-450b-ab21-ae002bbd543c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Instalación
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clonar el repositorio
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instalar dependencias
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Despliegue
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+El proyecto se despliega automáticamente en GitHub Pages cuando se hace push a la rama `main`.
 
-**Use GitHub Codespaces**
+## Configuración
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e43b9dc8-19a3-450b-ab21-ae002bbd543c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Configurar variables de entorno de Supabase en `.env`
+2. Ejecutar migraciones de base de datos si es necesario
+3. Configurar GitHub Pages en Settings > Pages (source: Deploy from branch, branch: main, folder: /docs)

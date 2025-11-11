@@ -1,28 +1,21 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Deploy to GitHub Pages
+name: Deploy to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build and deploy Vite site
   deploy:
     environment:
       name: github-pages
@@ -42,28 +35,11 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: |
-          # Create a temporary vite config for GitHub Pages with base path
-          echo 'import { defineConfig } from "vite";
-          import react from "@vitejs/plugin-react-swc";
-          import path from "path";
-          import { componentTagger } from "lovable-tagger";
-          
-          export default defineConfig(({ mode }) => ({
-            base: "/academi-co-plus-91388/",
-            build: { outDir: "docs" },
-            server: { host: "::", port: 8080 },
-            plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
-            resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
-          }));' > vite.config.gh.ts
-          
-          # Build with GitHub Pages config
-          npx vite build --config vite.config.gh.ts
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Publicar la carpeta generada por Vite
           path: 'docs'
 
       - name: Deploy to GitHub Pages
