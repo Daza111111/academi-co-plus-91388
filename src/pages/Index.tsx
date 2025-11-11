@@ -21,7 +21,7 @@ const Index = () => {
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/logo.png" alt="AcademiCO" className="h-20 w-auto" />
+          <img src="/logo.png" alt="AcademiCO" className="h-32 w-auto" />
         </div>
         <div className="flex gap-3">
           <Button variant="outline" onClick={() => navigate("/auth")}>
